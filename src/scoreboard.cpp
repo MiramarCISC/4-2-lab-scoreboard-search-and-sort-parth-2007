@@ -16,7 +16,7 @@ double calculateAverage(const int scores[], int size) {
     // If the array is null or the size is invalid, return 0.0.
     // Otherwise, return the total divided by size.
     if(scores == nullptr || !isValidSize(size)) return 0.0;
-    return calculateTotal(scores, size) / size;
+    return calculateTotal(scores, size) / (double) size;
 }
 
 int findLowest(const int scores[], int size) {
@@ -24,7 +24,7 @@ int findLowest(const int scores[], int size) {
     // Otherwise, return the smallest score.
     if(scores == nullptr || !isValidSize(size)) return 0;
     int val = scores[0];
-    for(int i = 1; i < size - 1; i++) if(scores[i] < val) val = scores[i];
+    for(int i = 1; i < size; i++) if(scores[i] < val) val = scores[i];
     return val;
 }
 
@@ -33,7 +33,7 @@ int findHighest(const int scores[], int size) {
     // Otherwise, return the largest score.
     if(scores == nullptr || !isValidSize(size)) return 0;
     int val = scores[0];
-    for(int i = 1; i < size - 1; i++) if(scores[i] > val) val = scores[i];
+    for(int i = 1; i < size; i++) if(scores[i] > val) val = scores[i];
     return val;
 }
 
