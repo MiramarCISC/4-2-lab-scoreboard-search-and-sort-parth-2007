@@ -4,10 +4,14 @@
 using namespace std;
 
 int calculateTotal(const int scores[], int size) {
-    // TODO:
     // If the array is null or the size is invalid, return 0.
     // Otherwise, return the sum of all scores.
-    return 0;
+    if(scores == nullptr || !isValidSize(size)) return 0;
+    int sum = 0;
+    for(int i = 0; i < size; i++) {
+        sum += scores[i];
+    }
+    return sum;
 }
 
 double calculateAverage(const int scores[], int size) {
