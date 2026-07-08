@@ -33,10 +33,14 @@ int findLowest(const int scores[], int size) {
 }
 
 int findHighest(const int scores[], int size) {
-    // TODO:
     // If the array is null or the size is invalid, return 0.
     // Otherwise, return the largest score.
-    return 0;
+    if(scores == nullptr || !isValidSize(size)) return 0;
+    int val = scores[0];
+    for(int i = 1; i < size - 1; i++) {
+        if(scores[i] > val) val = scores[i];
+    }
+    return val;
 }
 
 int findScore(const int scores[], int size, int target) {
