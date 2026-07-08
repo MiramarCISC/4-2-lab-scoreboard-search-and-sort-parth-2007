@@ -15,10 +15,10 @@ int calculateTotal(const int scores[], int size) {
 }
 
 double calculateAverage(const int scores[], int size) {
-    // TODO:
     // If the array is null or the size is invalid, return 0.0.
     // Otherwise, return the total divided by size.
-    return 0.0;
+    if(scores == nullptr || !isValidSize(size)) return 0.0;
+    return calculateTotal(scores, size) / size;
 }
 
 int findLowest(const int scores[], int size) {
